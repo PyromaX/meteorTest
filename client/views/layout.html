@@ -1,0 +1,17 @@
+<template name="mainLayout">
+    {{> loginButtons}}
+
+    <div>
+        {{> yield}}
+    </div>
+    {{#if currentUser}}
+        <p>
+            <a class="logout">Se déconnecter</a>
+        </p>
+    {{else}}
+        <p>
+            <a href="{{pathFor route='login'}}">Se connecter</a>
+        </p>
+    {{/if}}
+</template>
+
